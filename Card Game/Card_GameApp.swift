@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+
 struct Card_GameApp: App {
     var body: some Scene {
         WindowGroup {
