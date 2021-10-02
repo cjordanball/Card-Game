@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var emojis: Array<String> = ["🚒", "✈️", "🚲", "🚊", "🚠", "🛵", "🚅","🛶", "🚀", "⛵️", "🛺", "🛸", "🚇", "🚂", "🚜", "🦽", "🚞", "🛳", "🚘", "🚟", "🚃", "🏍", "🛴", "🛻"];
     
-    @State var emojiCount: Int = 5;
+    
+    @State var emojiCount: Int = 20;
     var body: some View {
         VStack {
             ScrollView {
@@ -22,32 +22,9 @@ struct ContentView: View {
                     }
                 }.foregroundColor(.red)
             }
-            Spacer()
-            HStack {
-                remove;
-                Spacer();
-                add;
-               
-            }.padding(20)
         }
         .padding(.horizontal)
 
-    }
-    
-    var remove: some View {
-        Button {
-            emojiCount = max(emojiCount - 1, 1)
-        } label: {
-            Image(systemName: "minus.circle")
-        };
-    }
-    
-    var add: some View {
-        Button {
-            emojiCount = min(emojiCount + 1, emojis.count - 1)
-        } label: {
-            Image(systemName: "plus.circle")
-        };
     }
 }
 
@@ -84,6 +61,6 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.light)
+            .preferredColorScheme(.dark)
     }
 }
