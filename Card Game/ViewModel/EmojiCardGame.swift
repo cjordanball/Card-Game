@@ -20,6 +20,6 @@ class EmojiCardGame: ObservableObject {
     private var model: CardGame<String> = createCardGame();
     
     var cards: Array<CardGame<String>.Card> {
-        return model.cards;
+        model.cards;
     }
 }
