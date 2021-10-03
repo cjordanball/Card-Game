@@ -12,14 +12,19 @@ class EmojiCardGame: ObservableObject {
     static let emojis: Array<String> = ["🚒", "✈️", "🚲", "🚊", "🚠", "🛵", "🚅","🛶", "🚀", "⛵️", "🛺", "🛸", "🚇", "🚂", "🚜", "🦽", "🚞", "🛳", "🚘", "🚟", "🚃", "🏍", "🛴", "🛻"];
     
     static func createCardGame() -> CardGame<String> {
-        CardGame<String>(numberOfPairsOfCards: 4) { pairIndex in
+        CardGame<String>(numberOfPairsOfCards: 8) { pairIndex in
             emojis[pairIndex]
         }
     }
     
-    private var model: CardGame<String> = createCardGame();
+    @Published private var model: CardGame<String> = createCardGame();
     
     var cards: Array<CardGame<String>.Card> {
         model.cards;
+    }
+    
+    // MARK: - Intent(s)
+    func choose(_ card: CardGame<String>.Card) {
+        model.choose(card);
     }
 }

@@ -7,11 +7,29 @@
 
 import Foundation
 
-struct CardGame<CardContent> {
+struct CardGame<CardContent> where CardContent: Equatable {
     private(set) var cards: Array<Card>
     
-    func choose(_ card: Card) {
-        
+    private var indexOfOnlyFaceUpCard: Int?
+    
+    mutating func choose(_ card: Card) {
+        if let chosenIndex = cards.firstIndex(where: {$0.id == card.id }),
+            !cards[chosenIndex].isFaceUp,
+            !cards[chosenIndex].isMatched {
+            if let potentialMatchIndex = indexOfOnlyFaceUpCard {
+                if cards[chosenIndex].content == cards[potentialMatchIndex].content {
+                    cards[chosenIndex].isMatched = true;
+                    cards[potentialMatchIndex].isMatched = true;
+                }
+                indexOfOnlyFaceUpCard = nil;
+            } else {
+                for index in cards.indices {
+                    cards[index].isFaceUp = false;
+                }
+                indexOfOnlyFaceUpCard = chosenIndex;
+            }
+            cards[chosenIndex].isFaceUp.toggle();
+        };
     }
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
@@ -25,10 +43,12 @@ struct CardGame<CardContent> {
     }
     
     struct Card: Identifiable {
-        var isFaceUp: Bool = true;
+        var isFaceUp: Bool = false;
         var isMatched: Bool = false;
         var content: CardContent;
         var id: Int;
+        
+        
         
     }
 }
