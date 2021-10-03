@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    let cardGame: EmojiCardGame;
+    @ObservedObject var cardGame: EmojiCardGame;
     var body: some View {
-        VStack {
-            ScrollView {
-                LazyVGrid (columns: [GridItem(.adaptive(minimum: 75))], spacing: 15) {
-                    ForEach(cardGame.cards){ card in
-                        CardView(card: card)
-                            .aspectRatio(0.67, contentMode: .fit)
-                    }
-                }.foregroundColor(.red)
-            }
+        ScrollView {
+            LazyVGrid (columns: [GridItem(.adaptive(minimum: 75))], spacing: 15) {
+                ForEach(cardGame.cards){ card in
+                    CardView(card: card)
+                        .aspectRatio(0.67, contentMode: .fit)
+                        .onTapGesture {
+                            cardGame.choose(card);
+                        }
+                }
+            }.foregroundColor(.red)
         }
-        .padding(.horizontal)
-
     }
 }
 
@@ -34,11 +33,12 @@ struct CardView: View {
                 shape.foregroundColor(.white)
                 shape.strokeBorder(lineWidth: 3);
                 Text(card.content).font(.largeTitle);
+            } else if card.isMatched {
+                shape.opacity(0.5)
             } else {
                 shape.fill(.red)
             }
         }
-
     }
 }
 
@@ -52,7 +52,5 @@ struct ContentView_Previews: PreviewProvider {
         let game = EmojiCardGame();
         ContentView(cardGame: game)
             .preferredColorScheme(.dark)
-        ContentView(cardGame: game)
-            .preferredColorScheme(.light)
     }
 }
