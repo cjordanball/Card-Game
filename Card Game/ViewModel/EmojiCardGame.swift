@@ -9,15 +9,15 @@ import SwiftUI
 
 class EmojiCardGame: ObservableObject {
     
-    static let emojis: Array<String> = ["🚒", "✈️", "🚲", "🚊", "🚠", "🛵", "🚅","🛶", "🚀", "⛵️", "🛺", "🛸", "🚇", "🚂", "🚜", "🦽", "🚞", "🛳", "🚘", "🚟", "🚃", "🏍", "🛴", "🛻"];
+    private static let emojis: Array<String> = ["🚒", "✈️", "🚲", "🚊", "🚠", "🛵", "🚅","🛶", "🚀", "⛵️", "🛺", "🛸", "🚇", "🚂", "🚜", "🦽", "🚞", "🛳", "🚘", "🚟", "🚃", "🏍", "🛴", "🛻"];
     
-    static func createCardGame() -> CardGame<String> {
+    private static func createCardGame() -> CardGame<String> {
         CardGame<String>(numberOfPairsOfCards: 8) { pairIndex in
             emojis[pairIndex]
         }
     }
     
-    @Published private var model: CardGame<String> = createCardGame();
+    @Published private var model = createCardGame();
     
     var cards: Array<CardGame<String>.Card> {
         model.cards;

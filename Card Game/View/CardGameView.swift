@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CardGameView.swift
 //  Card Game
 //
 //  Created by BallWebDev on 9/26/21.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CardGameView: View {
     @ObservedObject var cardGame: EmojiCardGame;
+    
     var body: some View {
         ScrollView {
             LazyVGrid (columns: [GridItem(.adaptive(minimum: 75))], spacing: 15) {
@@ -44,13 +45,10 @@ struct CardView: View {
 
 
 
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiCardGame();
-        ContentView(cardGame: game)
+        CardGameView(cardGame: game)
             .preferredColorScheme(.dark)
     }
 }
