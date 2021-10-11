@@ -10,10 +10,10 @@ import SwiftUI
 @main
 
 struct Card_GameApp: App {
-    let game = EmojiCardGame();
+    private let game = EmojiCardGame();
     var body: some Scene {
         WindowGroup {
-            ContentView(cardGame: game)
+            CardGameView(cardGame: game)
         }
     }
 }
