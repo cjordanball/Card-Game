@@ -12,36 +12,45 @@ struct CardGameView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid (columns: [GridItem(.adaptive(minimum: 75))], spacing: 15) {
+            LazyVGrid (columns: [GridItem(.adaptive(minimum: DrawingConstants.minimumCardWidth))], spacing: DrawingConstants.cardSpacing) {
                 ForEach(cardGame.cards){ card in
                     CardView(card: card)
-                        .aspectRatio(0.67, contentMode: .fit)
+                        .aspectRatio(DrawingConstants.aspectRatio, contentMode: .fit)
                         .onTapGesture {
                             cardGame.choose(card);
                         }
                 }
-            }.foregroundColor(.red)
+
+            }.foregroundColor(DrawingConstants.cardColor);
         }
+        .padding(.horizontal)
     }
 }
 
 struct CardView: View {
-    let card: CardGame<String>.Card
+    let card: EmojiCardGame.Card
     var body: some View {
-        ZStack {
-            let shape = RoundedRectangle(cornerRadius: 20)
-            if card.isFaceUp {
-                shape.foregroundColor(.white)
-                shape.strokeBorder(lineWidth: 3);
-                Text(card.content).font(.largeTitle);
-            } else if card.isMatched {
-                shape.opacity(0.5)
-            } else {
-                shape.fill(.red)
+        GeometryReader { geo in
+            ZStack {
+                let shape = RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius);
+                if card.isFaceUp {
+                    shape.foregroundColor(.white)
+                    shape.strokeBorder(lineWidth: DrawingConstants.borderWidth);
+                    Text(card.content).font(font(in: geo.size));
+                } else if card.isMatched {
+                    shape.opacity(DrawingConstants.shading)
+                } else {
+                    shape.fill(DrawingConstants.cardColor)
+                }
             }
         }
     }
+    private func font(in size: CGSize) -> Font {
+        Font.system(size: min(size.height, size.width) * DrawingConstants.emojiScale);
+    }
 }
+
+
 
 
 
@@ -49,6 +58,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiCardGame();
         CardGameView(cardGame: game)
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
     }
 }

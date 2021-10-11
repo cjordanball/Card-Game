@@ -13,6 +13,7 @@
 		3F57E3FB270169B500CB1F92 /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57E3FA270169B500CB1F92 /* CardGameView.swift */; };
 		3F57E3FD270169B700CB1F92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F57E3FC270169B700CB1F92 /* Assets.xcassets */; };
 		3F57E400270169B700CB1F92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F57E3FF270169B700CB1F92 /* Preview Assets.xcassets */; };
+		3FACA821270D32ED00B86C24 /* DrawingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACA820270D32ED00B86C24 /* DrawingConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		3F57E3FA270169B500CB1F92 /* CardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
 		3F57E3FC270169B700CB1F92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F57E3FF270169B700CB1F92 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3FACA820270D32ED00B86C24 /* DrawingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				3F57E3FA270169B500CB1F92 /* CardGameView.swift */,
+				3FACA820270D32ED00B86C24 /* DrawingConstants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F57E3FB270169B500CB1F92 /* CardGameView.swift in Sources */,
+				3FACA821270D32ED00B86C24 /* DrawingConstants.swift in Sources */,
 				3F57E3F9270169B500CB1F92 /* Card_GameApp.swift in Sources */,
 				3F30CB362707D8BF0070FC0D /* CardGame.swift in Sources */,
 				3F30CB382707DBA60070FC0D /* EmojiCardGame.swift in Sources */,

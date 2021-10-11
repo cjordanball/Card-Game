@@ -9,22 +9,24 @@ import SwiftUI
 
 class EmojiCardGame: ObservableObject {
     
-    private static let emojis: Array<String> = ["🚒", "✈️", "🚲", "🚊", "🚠", "🛵", "🚅","🛶", "🚀", "⛵️", "🛺", "🛸", "🚇", "🚂", "🚜", "🦽", "🚞", "🛳", "🚘", "🚟", "🚃", "🏍", "🛴", "🛻"];
+    typealias Card = CardGame<String>.Card
+    
+    private static let emojis = ["🚒", "✈️", "🚲", "🚊", "🚠", "🛵", "🚅","🛶", "🚀", "⛵️", "🛺", "🛸", "🚇", "🚂", "🚜", "🦽", "🚞", "🛳", "🚘", "🚟", "🚃", "🏍", "🛴", "🛻"];
     
     private static func createCardGame() -> CardGame<String> {
-        CardGame<String>(numberOfPairsOfCards: 8) { pairIndex in
+        CardGame<String>(numberOfPairsOfCards: 10) { pairIndex in
             emojis[pairIndex]
         }
     }
     
     @Published private var model = createCardGame();
     
-    var cards: Array<CardGame<String>.Card> {
+    var cards: Array<Card> {
         model.cards;
     }
     
     // MARK: - Intent(s)
-    func choose(_ card: CardGame<String>.Card) {
+    func choose(_ card: Card) {
         model.choose(card);
     }
 }
