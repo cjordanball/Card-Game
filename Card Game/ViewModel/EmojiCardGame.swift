@@ -29,4 +29,12 @@ class EmojiCardGame: ObservableObject {
     func choose(_ card: Card) {
         model.choose(card);
     }
+    
+    func shuffle() {
+        model.shuffle();
+    }
+    
+    func restart() {
+        model = EmojiCardGame.createCardGame();
+    }
 }
