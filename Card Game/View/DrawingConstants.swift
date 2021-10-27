@@ -16,5 +16,11 @@ struct DrawingConstants {
     static let borderWidth: CGFloat = 3.0;
     static let shading: Double = 0.5;
     static let cardColor: Color = .blue;
-    static let emojiScale: CGFloat = 0.8;
+    static let emojiScale: CGFloat = 0.75;
+    static let timerCirclePadding: CGFloat = 5;
+    static let fontSize: CGFloat = 32;
+    static let undealtHeight: CGFloat = 90;
+    static let undealtWidth = undealtHeight * aspectRatio;
+    static let dealDuration: CGFloat = 0.5;
+    static let bonusInterval: TimeInterval = 6;
 }

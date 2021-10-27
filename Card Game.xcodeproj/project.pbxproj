@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F176E0B2717CB43002183A2 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F176E0A2717CB43002183A2 /* AspectVGrid.swift */; };
+		3F176E0D27190A4D002183A2 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F176E0C27190A4D002183A2 /* Pie.swift */; };
+		3F176EA0271B3E95002183A2 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F176E9F271B3E95002183A2 /* Cardify.swift */; };
 		3F30CB362707D8BF0070FC0D /* CardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30CB352707D8BF0070FC0D /* CardGame.swift */; };
 		3F30CB382707DBA60070FC0D /* EmojiCardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30CB372707DBA60070FC0D /* EmojiCardGame.swift */; };
 		3F57E3F9270169B500CB1F92 /* Card_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57E3F8270169B500CB1F92 /* Card_GameApp.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F176E0A2717CB43002183A2 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		3F176E0C27190A4D002183A2 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		3F176E9F271B3E95002183A2 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		3F30CB352707D8BF0070FC0D /* CardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGame.swift; sourceTree = "<group>"; };
 		3F30CB372707DBA60070FC0D /* EmojiCardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCardGame.swift; sourceTree = "<group>"; };
 		3F57E3F5270169B500CB1F92 /* Card Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +65,9 @@
 			children = (
 				3F57E3FA270169B500CB1F92 /* CardGameView.swift */,
 				3FACA820270D32ED00B86C24 /* DrawingConstants.swift */,
+				3F176E0A2717CB43002183A2 /* AspectVGrid.swift */,
+				3F176E0C27190A4D002183A2 /* Pie.swift */,
+				3F176E9F271B3E95002183A2 /* Cardify.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,7 +181,10 @@
 			files = (
 				3F57E3FB270169B500CB1F92 /* CardGameView.swift in Sources */,
 				3FACA821270D32ED00B86C24 /* DrawingConstants.swift in Sources */,
+				3F176EA0271B3E95002183A2 /* Cardify.swift in Sources */,
+				3F176E0B2717CB43002183A2 /* AspectVGrid.swift in Sources */,
 				3F57E3F9270169B500CB1F92 /* Card_GameApp.swift in Sources */,
+				3F176E0D27190A4D002183A2 /* Pie.swift in Sources */,
 				3F30CB362707D8BF0070FC0D /* CardGame.swift in Sources */,
 				3F30CB382707DBA60070FC0D /* EmojiCardGame.swift in Sources */,
 			);
